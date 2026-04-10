@@ -1,0 +1,4 @@
+pandas~=3.0.2
+scikit-learn~=1.8.0
+opencv-python~=4.13.0.92
+tqdm~=4.67.3
