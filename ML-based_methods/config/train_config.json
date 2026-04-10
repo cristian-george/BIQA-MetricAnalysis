@@ -1,21 +1,21 @@
 {
-  "root_directory": "../Datasets/KonIQ-10K/",
-  "train_directory": "test",
+  "root_directory": "../../Datasets/KonIQ-10K/",
+  "train_directory": "train",
   "val_directory": "val",
-  "train_lb": "test_labels.csv",
+  "train_lb": "train_labels.csv",
   "val_lb": "val_labels.csv",
   "augment": true,
   "batch_size": 8,
-  "epoch_size": 30,
+  "epoch_size": 40,
   "continue_train": {
-    "from_epoch": 40,
-    "from_weights": "data/models/efficientnet_v2_s_384x512_bsz8_MSE_KonIQ-10K/01/best_model1.h5"
+    "from_epoch": 0,
+    "from_weights": ""
   },
   "lr": {
     "name": "exponential_decay",
     "value": {
-      "initial_lr": 5e-5,
-      "final_lr": 5e-6,
+      "initial_lr": 1e-04,
+      "final_lr": 5e-05,
       "staircase": false
     }
   },

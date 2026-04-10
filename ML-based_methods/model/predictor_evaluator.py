@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 from config_parser.evaluate_config_parser import EvaluateConfigParser
 from model.predictor import Predictor
-from util.metrics import compute_metrics, compute_mean_std
+from util.np_metrics import compute_metrics, compute_mean_std
 from util.tf_dataset_pipeline import create_dataset_pipeline
 
 
@@ -17,7 +17,7 @@ def get_file(test_directory, weights_path):
     test_dir_name = os.path.basename(test_directory)
 
     file_name = f'eval_{model_name}_{dataset_name}_{test_dir_name}.csv'
-    weights_directory = os.path.dirname(weights_path)
+    weights_directory: str = os.path.dirname(weights_path)
     file_path = os.path.join(weights_directory, file_name)
     return file_name, file_path
 

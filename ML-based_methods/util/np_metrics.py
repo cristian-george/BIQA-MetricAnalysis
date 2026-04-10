@@ -14,19 +14,18 @@ def krcc(x, y):
     return scipy.stats.kendalltau(x, y)[0]
 
 
-def mae(x, y):
-    return np.mean(np.abs(x - y))
-
-
 def rmse(x, y):
     return np.sqrt(np.mean(np.square(x - y)))
+
+
+def mae(x, y):
+    return np.mean(np.abs(x - y))
 
 
 def compute_metrics(y_true, y_pred, verbose=True):
     PLCC = np.round(plcc(y_true, y_pred), 3)
     SRCC = np.round(srcc(y_true, y_pred), 3)
     KRCC = np.round(krcc(y_true, y_pred), 3)
-
     RMSE = np.round(rmse(y_true, y_pred), 3)
     MAE = np.round(mae(y_true, y_pred), 3)
 

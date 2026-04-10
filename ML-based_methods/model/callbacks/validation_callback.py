@@ -2,7 +2,7 @@ import numpy as np
 import tensorflow as tf
 from tqdm import tqdm
 
-from util.metrics import plcc
+from util.np_metrics import plcc
 
 
 class ValidationCallback(tf.keras.callbacks.Callback):

@@ -7,6 +7,10 @@ def get_model_checkpoint_callbacks(callbacks_info):
     model_checkpoint_info = callbacks_info.get('model_checkpoint', {})
     ckpt_dir = model_checkpoint_info.get('ckpt_dir', '')
 
+    yield ModelCheckpoint(os.path.join(str(ckpt_dir), 'last_model.weights.h5'),
+                          save_best_only=False,
+                          save_weights_only=True)
+
     ckpts_info = model_checkpoint_info.get('ckpts', [])
     for ckpt_info in ckpts_info:
         monitor = ckpt_info.get('monitor', '')
@@ -19,7 +23,7 @@ def get_model_checkpoint_callbacks(callbacks_info):
         if not os.path.exists(path):
             os.makedirs(path, exist_ok=True)
 
-        yield ModelCheckpoint(os.path.join(str(path), 'best_model_{epoch:02d}.h5'),
+        yield ModelCheckpoint(os.path.join(str(path), 'best_model_{epoch:02d}.weights.h5'),
                               monitor=monitor,
                               mode=mode,
                               save_best_only=save_best_only,

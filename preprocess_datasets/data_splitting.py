@@ -5,7 +5,7 @@ import shutil
 
 dataset = "KonIQ-10K"
 
-dataset_dir = f"../Datasets/{dataset}"
+dataset_dir = f"../../Datasets/{dataset}"
 label_file_path = f"{dataset_dir}/{dataset}_labels.csv"
 image_dir = f"{dataset_dir}/images"
 

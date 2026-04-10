@@ -1,4 +1,4 @@
-from keras.optimizers.schedules.learning_rate_schedule import ExponentialDecay
+from keras.optimizers.schedules import ExponentialDecay
 
 
 def get_exponential_decay(scheduler_info, steps_per_epoch, num_epochs):

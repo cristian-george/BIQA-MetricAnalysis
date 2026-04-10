@@ -41,7 +41,7 @@ class PredictorTrainer:
             os.makedirs(ckpt_dir, exist_ok=True)
 
             config = {
-                "model_config": self.predictor.config.get_config_data(),
+                "model_config": self.predictor.config_parser.get_config_data(),
                 "train_config": self.config_parser.get_config_data(),
             }
             with open(os.path.join(ckpt_dir, 'config_model.json'), 'w') as file:

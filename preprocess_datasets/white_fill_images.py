@@ -24,7 +24,7 @@ def white_fill(image, target_size):
     return padded_image
 
 
-def white_fill_images(input_folder, output_folder, target_size):
+def white_fill_images(input_folder: str, output_folder: str, target_size):
     """
     Pads all images in the input_folder and saves them to the output_folder.
     """

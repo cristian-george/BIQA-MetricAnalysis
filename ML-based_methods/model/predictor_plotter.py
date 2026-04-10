@@ -1,4 +1,5 @@
 import os
+from typing import Sequence
 
 import numpy as np
 import pandas as pd
@@ -15,7 +16,7 @@ class PredictorPlotter:
         self.__init_evaluate_info()
 
     def __init_evaluate_info(self):
-        self.test_dirs = self.evaluate_info['test_dirs']
+        self.test_dirs: Sequence[str] = self.evaluate_info['test_dirs']
         self.test_lbs = self.evaluate_info['test_lbs']
         self.weights_path = self.evaluate_info['weights_path']
 

@@ -10,8 +10,8 @@ from util.tf_metrics import plcc
 
 class Predictor:
     def __init__(self):
-        config_parser = ModelConfigParser()
-        self.config = config_parser.parse()
+        self.config_parser = ModelConfigParser()
+        self.config = self.config_parser.parse()
 
         self.__init_fields()
         self.__build_model()

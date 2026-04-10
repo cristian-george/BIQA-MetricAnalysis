@@ -9,11 +9,9 @@ from model.predictor_trainer import PredictorTrainer
 from util.tf_gpu import check_gpu_support, limit_gpu_memory, increase_cpu_num_threads
 
 if __name__ == "__main__":
-    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-
     use_gpu = check_gpu_support()
     if use_gpu:
-        limit_gpu_memory(memory_limit=3.0 * 1024)
+        limit_gpu_memory(memory_limit=7.0 * 1024)
     else:
         increase_cpu_num_threads(num_threads=os.cpu_count())
 
@@ -53,11 +51,11 @@ if __name__ == "__main__":
                 plotter = PredictorPlotter()
                 plotter.plot_errors('difference', lambda x, y: x - y,
                                     label_x='MOS',
-                                    label_y='Difference error $\Delta$')
+                                    label_y=r'Difference error $\Delta$')
             case 7:
                 plotter = PredictorPlotter()
                 plotter.plot_errors('absolute', lambda x, y: np.abs(x - y),
                                     label_x='MOS',
-                                    label_y='Absolute error $|\Delta|$')
+                                    label_y=r'Absolute error $|\Delta|$')
 
         tf.keras.backend.clear_session()
